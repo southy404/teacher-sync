@@ -1,0 +1,86 @@
+{
+  "name": "teacher-sync",
+  "displayName": "Teacher Sync",
+  "description": "Sync teacher project snapshots to students and allow local experimentation with reset and session support.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.109.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onView:teacherSyncSidebar",
+    "onCommand:teacher-sync.createSnapshot",
+    "onCommand:teacher-sync.resetToTeacher",
+    "onCommand:teacher-sync.startSession",
+    "onCommand:teacher-sync.joinSession",
+    "onCommand:teacher-sync.leaveSession"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "teacher-sync.startSession",
+        "title": "Teacher Sync: Start Session"
+      },
+      {
+        "command": "teacher-sync.joinSession",
+        "title": "Teacher Sync: Join Session"
+      },
+      {
+        "command": "teacher-sync.leaveSession",
+        "title": "Teacher Sync: Leave Session"
+      },
+      {
+        "command": "teacher-sync.createSnapshot",
+        "title": "Teacher Sync: Create Snapshot"
+      },
+      {
+        "command": "teacher-sync.resetToTeacher",
+        "title": "Teacher Sync: Reset to Teacher Version"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "teacherSyncContainer",
+          "title": "Teacher Sync",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "teacherSyncContainer": [
+        {
+          "id": "teacherSyncSidebar",
+          "name": "Controls"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@types/uuid": "^10.0.0",
+    "@types/vscode": "^1.109.0",
+    "@types/ws": "^8.18.1",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.39.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.54.0"
+  },
+  "dependencies": {
+    "uuid": "^13.0.0",
+    "ws": "^8.19.0"
+  }
+}
