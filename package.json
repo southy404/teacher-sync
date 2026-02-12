@@ -1,21 +1,40 @@
 {
   "name": "teacher-sync",
   "displayName": "Teacher Sync",
-  "description": "Sync teacher project snapshots to students and allow local experimentation with reset and session support.",
-  "version": "0.0.1",
+  "description": "Real-time teacher-to-student project synchronization for VS Code. Create snapshots, run live coding sessions, and allow students to experiment safely with instant reset and version control..",
+  "version": "1.0.1",
+  "publisher": "Southface",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/southy404/teacher-sync.git"
+  },
+  "icon": "resources/marketplace-icon.png",
+  "keywords": [
+    "education",
+    "classroom",
+    "live coding",
+    "sync",
+    "code sync",
+    "live coding",
+    "collaboration",
+    "websocket",
+    "snapshot",
+    "teaching",
+    "bootcamp",
+    "code sync",
+    "real-time"
+  ],
   "engines": {
-    "vscode": "^1.109.0"
+    "vscode": "^1.74.0"
   },
   "categories": [
-    "Other"
+    "Education",
+    "Other",
+    "Visualization"
   ],
   "activationEvents": [
-    "onView:teacherSyncSidebar",
-    "onCommand:teacher-sync.createSnapshot",
-    "onCommand:teacher-sync.resetToTeacher",
-    "onCommand:teacher-sync.startSession",
-    "onCommand:teacher-sync.joinSession",
-    "onCommand:teacher-sync.leaveSession"
+    "onStartupFinished"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -71,7 +90,7 @@
     "@types/mocha": "^10.0.10",
     "@types/node": "22.x",
     "@types/uuid": "^10.0.0",
-    "@types/vscode": "^1.109.0",
+    "@types/vscode": "^1.74.0",
     "@types/ws": "^8.18.1",
     "@vscode/test-cli": "^0.0.12",
     "@vscode/test-electron": "^2.5.2",

@@ -14,7 +14,9 @@ type ConnectionHandler = (connected: boolean) => void;
 
 export class SocketClient {
   private socket: WebSocket | null = null;
-  private readonly url = "ws://localhost:8080";
+  private readonly url =
+    process.env.TEACHER_SYNC_SERVER ??
+    "wss://teacher-sync-server-production.up.railway.app";
 
   private snapshotHandler: SnapshotHandler | null = null;
   private messageHandler: MessageHandler | null = null;
