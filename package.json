@@ -1,4 +1,4 @@
-{
+F{
   "name": "teacher-sync",
   "displayName": "Teacher Sync",
   "description": "Real-time teacher-to-student project synchronization for VS Code. Create snapshots, run live coding sessions, and allow students to experiment safely with instant reset and version control..",
@@ -34,7 +34,7 @@
     "Visualization"
   ],
   "activationEvents": [
-    "onStartupFinished"
+     "onView:teacherSyncSidebar"
   ],
   "main": "./out/extension.js",
   "contributes": {
